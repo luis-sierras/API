@@ -12,8 +12,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Items {
     @Id
-    private Long id;
-    private String ListName;
+    private String Id;
     private String Item;
 
 
