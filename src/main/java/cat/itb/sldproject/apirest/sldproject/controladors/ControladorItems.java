@@ -34,7 +34,7 @@ public class ControladorItems {
 
     //per modificar un usuari existent
     @PutMapping("/itemsMod")
-    public Items modificarItem(@RequestBody Item mod){
+    public Items modificarItem(@RequestBody Items mod){
         return serveiItems.modificarItem(mod);
     }
 }
