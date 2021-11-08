@@ -16,4 +16,8 @@ public class Items {
     private String Id;
     private String Item;
 
+    public Items(String id, String item) {
+        Id = id;
+        Item = item;
+    }
 }

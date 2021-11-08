@@ -1,5 +1,6 @@
 package cat.itb.sldproject.apirest.sldproject;
 
+import cat.itb.sldproject.apirest.sldproject.model.entitats.Items;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,6 +9,8 @@ public class SldProjectApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SldProjectApplication.class, args);
+
+        new Items("1", "pedro");
     }
 
 }
