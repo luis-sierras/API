@@ -10,7 +10,6 @@ public class SldProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(SldProjectApplication.class, args);
 
-        new Items("1", "pedro");
     }
 
 }
