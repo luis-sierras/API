@@ -2,11 +2,13 @@ package cat.itb.sldproject.apirest.sldproject.controladors;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Items;
 import cat.itb.sldproject.apirest.sldproject.model.serveis.ServeisItems;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class ControladorItems {
 
     private final ServeisItems serveiItems;
