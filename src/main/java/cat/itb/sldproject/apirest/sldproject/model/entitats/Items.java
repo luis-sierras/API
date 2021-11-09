@@ -10,14 +10,14 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-@RequiredArgsConstructor
 public class Items {
     @Id
-    private String Id;
+    private String id;
     private String Item;
+    private boolean hecho;
+    private long orden;
 
-    public Items(String id, String item) {
-        Id = id;
-        Item = item;
+    public String getId() {
+        return id;
     }
 }

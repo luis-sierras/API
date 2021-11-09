@@ -12,6 +12,10 @@ import java.util.List;
 public class ServeisItems {
     private final RepositoriItems repoItems;
 
+    public ServeisItems(RepositoriItems repoItems) {
+        this.repoItems = repoItems;
+    }
+
     //llistar tots els ítems
     public List<Items> llistarItems(){
         return repoItems.findAll();
