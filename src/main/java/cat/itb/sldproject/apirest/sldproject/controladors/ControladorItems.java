@@ -35,20 +35,20 @@ public class ControladorItems {
         else return ResponseEntity.ok(res);
     }
 
-    @PostMapping("/todoitemsMake")
+    @PostMapping("/todoitems")
     public ResponseEntity<Items> crearItem(@RequestBody Items nou){
         Items res = serveiItems.afegirItem(nou);
         return new ResponseEntity<>(res, HttpStatus.CREATED);
 
     }
 
-    @DeleteMapping("/todoitemsDel/{id}")
+    @DeleteMapping("/todoitems/{id}")
     public ResponseEntity<Items> eliminarItem(@PathVariable String id){
         Items res = serveiItems.eliminarItem(id);
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/todoitemsMod")
+    @PutMapping("/todoitems")
     public ResponseEntity<Items> modificarItem(@RequestBody Items mod){
         Items res = serveiItems.modificarItem(mod);
         if (res == null) return ResponseEntity.notFound().build();
