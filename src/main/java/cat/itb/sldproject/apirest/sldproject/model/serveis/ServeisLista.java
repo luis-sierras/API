@@ -14,10 +14,6 @@ import java.util.List;
 public class ServeisLista {
     private final RepositoriLista repoLista;
 
-    public ServeisLista(RepositoriLista repoLista) {
-        this.repoLista = repoLista;
-    }
-
     //llistar tots els listas
     public List<Lista> llistarListas(){
         return repoLista.findAll();

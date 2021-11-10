@@ -16,9 +16,6 @@ public class ControladorLista {
 
     private final ServeisLista serveiListas;
 
-    public ControladorLista(ServeisLista serveiListas) {
-        this.serveiListas = serveiListas;
-    }
 
     @GetMapping("/todolists")
     public ResponseEntity<Object> listarListas(){
