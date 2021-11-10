@@ -1,7 +1,7 @@
 package cat.itb.sldproject.apirest.sldproject.model.serveis;
 
-import cat.itb.sldproject.apirest.sldproject.model.entitats.Items;
-import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriItems;
+import cat.itb.sldproject.apirest.sldproject.model.entitats.Item;
+import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriItem;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -9,39 +9,39 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class ServeisItems {
-    private final RepositoriItems repoItems;
+public class ServeisItem {
+    private final RepositoriItem repoItems;
 
-    public ServeisItems(RepositoriItems repoItems) {
+    public ServeisItem(RepositoriItem repoItems) {
         this.repoItems = repoItems;
     }
 
     //llistar tots els ítems
-    public List<Items> llistarItems(){
+    public List<Item> llistarItems(){
         return repoItems.findAll();
     }
 
     //consultar ítem per id
-    public Items consultarItem(String id){
+    public Item consultarItem(String id){
         return repoItems.findById(id).orElse(null);
     }
 
     //afegir ítem
-    public Items afegirItem(Items it){
+    public Item afegirItem(Item it){
         return repoItems.save(it);
     }
 
     //modificar sencer, si existeix el canvia, sino retorna null
-    public Items modificarItem(Items it){
-        Items aux=null;
+    public Item modificarItem(Item it){
+        Item aux=null;
         if(repoItems.existsById(it.getId())) aux=repoItems.save(it);
         return aux;
     }
 
     //eliminar ítem per id
     //si no existeix id retorna null
-    public Items eliminarItem(String id){
-        Items res=repoItems.findById(id).orElse(null);
+    public Item eliminarItem(String id){
+        Item res=repoItems.findById(id).orElse(null);
         if(res!=null) repoItems.deleteById(id);
         return res;
     }

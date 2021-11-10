@@ -1,6 +1,5 @@
 package cat.itb.sldproject.apirest.sldproject;
 
-import cat.itb.sldproject.apirest.sldproject.model.entitats.Items;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
