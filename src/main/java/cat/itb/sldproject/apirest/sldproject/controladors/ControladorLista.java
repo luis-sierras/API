@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ControladorLista {
 
-    private final ServeisLista serveiListas;
+    private ServeisLista serveiListas;
 
 
     @GetMapping("/todolists")
@@ -24,8 +24,8 @@ public class ControladorLista {
         else return ResponseEntity.ok(res);
     }
 
-    @GetMapping("/todolists/{id}")
-    public ResponseEntity<Lista> consultarLista(@PathVariable String id)
+    @GetMapping("/todolists/{idLista}")
+    public ResponseEntity<Lista> consultarLista(@PathVariable Long id)
     {
         Lista res = serveiListas.consultarLista(id);
         if (res == null) return ResponseEntity.notFound().build();
@@ -39,8 +39,8 @@ public class ControladorLista {
 
     }
 
-    @DeleteMapping("/todolists/{id}")
-    public ResponseEntity<Lista> eliminarLista(@PathVariable String id){
+    @DeleteMapping("/todolists/{idLista}")
+    public ResponseEntity<Lista> eliminarLista(@PathVariable Long id){
         Lista res = serveiListas.eliminarLista(id);
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }

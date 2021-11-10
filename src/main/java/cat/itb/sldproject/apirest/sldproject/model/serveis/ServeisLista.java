@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ServeisLista {
-    private final RepositoriLista repoLista;
+    private RepositoriLista repoLista;
 
     //llistar tots els listas
     public List<Lista> llistarListas(){
@@ -20,7 +20,7 @@ public class ServeisLista {
     }
 
     //consultar lista per id
-    public Lista consultarLista(String id){
+    public Lista consultarLista(Long id){
         return repoLista.findById(id).orElse(null);
     }
 
@@ -38,7 +38,7 @@ public class ServeisLista {
 
     //eliminar lista per id
     //si no existeix id retorna null
-    public Lista eliminarLista(String id){
+    public Lista eliminarLista(Long id){
         Lista res=repoLista.findById(id).orElse(null);
         if(res!=null) repoLista.deleteById(id);
         return res;

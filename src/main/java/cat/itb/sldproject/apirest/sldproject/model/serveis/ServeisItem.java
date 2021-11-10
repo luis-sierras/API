@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ServeisItem {
-    private final RepositoriItem repoItems;
+    private RepositoriItem repoItems;
 
     //llistar tots els ítems
     public List<Item> llistarItems(){
@@ -18,7 +18,7 @@ public class ServeisItem {
     }
 
     //consultar ítem per id
-    public Item consultarItem(String id){
+    public Item consultarItem(Long id){
         return repoItems.findById(id).orElse(null);
     }
 
@@ -36,7 +36,7 @@ public class ServeisItem {
 
     //eliminar ítem per id
     //si no existeix id retorna null
-    public Item eliminarItem(String id){
+    public Item eliminarItem(Long id){
         Item res=repoItems.findById(id).orElse(null);
         if(res!=null) repoItems.deleteById(id);
         return res;
