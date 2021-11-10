@@ -16,10 +16,6 @@ public class ControladorItem {
 
     private final ServeisItem serveiItems;
 
-    public ControladorItem(ServeisItem serveiItems) {
-        this.serveiItems = serveiItems;
-    }
-
     @GetMapping("/todoitems")
     public ResponseEntity<Object> listarItems(){
         List<Item> res = serveiItems.llistarItems();
