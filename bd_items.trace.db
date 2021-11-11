@@ -644,3 +644,39 @@ Insert into ITEMS values (ID, "asd" , Items, "asdfas") [21002-200]
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-11-11 15:17:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (LISTA: ""ID_LISTA"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."LISTA"("ID_LISTA","LISTA_NAME")VALUES(?,?) [22018-200]
+2021-11-11 15:17:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (LISTA: ""ID_LISTA"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."LISTA"("ID_LISTA","LISTA_NAME")VALUES(?,?) [22018-200]
+2021-11-11 15:24:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP FROM[*] LISTA WHERE ID_LISTA=1"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop from lista where id_lista=1 [42001-200]
+2021-11-11 15:24:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP CASCADE[*] FROM LISTA WHERE ID_LISTA=1"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop cascade from lista where id_lista=1 [42001-200]
+2021-11-11 15:25:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP FROM[*] LISTA WHERE ID_LISTA=1 CASCADE"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop from lista where id_lista=1 cascade [42001-200]
+2021-11-11 15:26:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE FROM LISTA WHERE ID_LISTA=1 CASCADE[*]"; SQL statement:
+delete from lista where id_lista=1 cascade [42000-200]
+2021-11-11 15:26:32 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CASCADE" not found; SQL statement:
+delete cascade from lista where id_lista=1 [42102-200]
+2021-11-11 15:28:01 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CASCADE" not found; SQL statement:
+delete cascade from lista where id_lista=1 [42102-200]
+2021-11-11 15:30:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ON[*] DELETE CASCADE FROM LISTA WHERE ID_LISTA=1"; SQL statement:
+on delete cascade from lista where id_lista=1 [42000-200]
+2021-11-11 15:30:21 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ON[*] DELETE CASCADE FROM LISTA WHERE ID_LISTA=1"; SQL statement:
+on delete cascade from lista where id_lista=1 [42000-200]
+2021-11-11 15:30:32 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE ON[*] CASCADE FROM LISTA WHERE ID_LISTA=1"; expected "identifier"; SQL statement:
+delete on cascade from lista where id_lista=1 [42001-200]
+2021-11-11 15:30:38 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CASCADE" not found; SQL statement:
+delete cascade from lista where id_lista=1 [42102-200]

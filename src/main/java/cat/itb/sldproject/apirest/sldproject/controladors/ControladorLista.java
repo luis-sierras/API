@@ -32,7 +32,7 @@ public class ControladorLista {
         else return ResponseEntity.ok(res);
     }
 
-    @PostMapping("/todolists")
+    @PostMapping("/todolistsCreate")
     public ResponseEntity<Lista> crearLista(@RequestBody Lista nou){
         Lista res = serveiListas.afegirLista(nou);
         return new ResponseEntity<>(res, HttpStatus.CREATED);
