@@ -31,7 +31,7 @@ public class ControladorItem {
         else return ResponseEntity.ok(res);
     }
 
-    @PostMapping("/todoitems")
+    @PostMapping("/todoitemsCreate")
     public ResponseEntity<Item> crearItem(@RequestBody Item nou){
         Item res = serveiItems.afegirItem(nou);
         return new ResponseEntity<>(res, HttpStatus.CREATED);
