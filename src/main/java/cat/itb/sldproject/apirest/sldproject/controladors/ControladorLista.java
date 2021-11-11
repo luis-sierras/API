@@ -20,7 +20,6 @@ public class ControladorLista {
     @GetMapping("/todolists")
     public ResponseEntity<Object> listarListas(){
         List<Lista> res = serveiListas.llistarListas();
-        System.out.println("GET TODO LISTS");
         if (res == null) return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(res);
     }
