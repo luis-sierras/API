@@ -16,7 +16,6 @@ public class ControladorLista {
 
     private ServeisLista serveiListas;
 
-
     @GetMapping("/todolists")
     public ResponseEntity<Object> listarListas(){
         List<Lista> res = serveiListas.llistarListas();
@@ -25,9 +24,9 @@ public class ControladorLista {
     }
 
     @GetMapping("/todolists/{idLista}")
-    public ResponseEntity<Lista> consultarLista(@PathVariable Long id)
+    public ResponseEntity<Lista> consultarLista(@PathVariable Long idLista)
     {
-        Lista res = serveiListas.consultarLista(id);
+        Lista res = serveiListas.consultarLista(idLista);
         if (res == null) return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(res);
     }
@@ -40,8 +39,8 @@ public class ControladorLista {
     }
 
     @DeleteMapping("/todolists/{idLista}")
-    public ResponseEntity<Lista> eliminarLista(@PathVariable Long id){
-        Lista res = serveiListas.eliminarLista(id);
+    public ResponseEntity<Lista> eliminarLista(@PathVariable Long idLista){
+        Lista res = serveiListas.eliminarLista(idLista);
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }
 
