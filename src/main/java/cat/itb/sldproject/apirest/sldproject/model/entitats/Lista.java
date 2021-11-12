@@ -12,9 +12,9 @@ import java.util.List;
 public class Lista {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idLista;
+    private Long id_Lista;
     private String listaName;
-    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "lista", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items = new ArrayList<>();
 
     public Lista(String listaName) {
@@ -26,7 +26,7 @@ public class Lista {
     }
 
     public Long getId() {
-        return idLista;
+        return id_Lista;
     }
 
 }

@@ -17,7 +17,7 @@ public class Item {
     private Long id;
     private String itemName;
     @ManyToOne
-    @JoinColumn(name = "idLista")
+    @JoinColumn(name = "id_Lista")
     private Lista lista;
     private boolean hecho;
     private long orden;
