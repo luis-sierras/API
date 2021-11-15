@@ -2,8 +2,6 @@ package cat.itb.sldproject.apirest.sldproject.controladors;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
 import cat.itb.sldproject.apirest.sldproject.model.serveis.ServeisLista;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +10,13 @@ import java.util.List;
 
 
 @RestController
-@NoArgsConstructor
 public class ControladorLista {
 
-    private ServeisLista serveiListas;
+    private final ServeisLista serveiListas;
+
+    public ControladorLista(ServeisLista serveiListas) {
+        this.serveiListas = serveiListas;
+    }
 
     @GetMapping("/todolists")
     public ResponseEntity<Object> listarListas(){

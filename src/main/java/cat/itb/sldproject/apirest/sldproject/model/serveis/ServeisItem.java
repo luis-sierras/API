@@ -2,15 +2,17 @@ package cat.itb.sldproject.apirest.sldproject.model.serveis;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Item;
 import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriItem;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@NoArgsConstructor
 public class ServeisItem {
-    private RepositoriItem repoItems;
+    private final RepositoriItem repoItems;
+
+    public ServeisItem(RepositoriItem repoItems) {
+        this.repoItems = repoItems;
+    }
 
     //llistar tots els ítems
     public List<Item> llistarItems() {

@@ -2,15 +2,17 @@ package cat.itb.sldproject.apirest.sldproject.model.serveis;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
 import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriLista;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@NoArgsConstructor
 public class ServeisLista {
-    private RepositoriLista repoLista;
+    private final RepositoriLista repoLista;
+
+    public ServeisLista(RepositoriLista repoLista) {
+        this.repoLista = repoLista;
+    }
 
     //llistar tots els listas
     public List<Lista> llistarListas() {

@@ -680,3 +680,10 @@ delete on cascade from lista where id_lista=1 [42001-200]
 2021-11-11 15:30:38 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CASCADE" not found; SQL statement:
 delete cascade from lista where id_lista=1 [42102-200]
+2021-11-15 16:45:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM LISTA 
+SELECT[*] * FROM ITEM"
+Syntax error in SQL statement "SELECT * FROM LISTA 
+SELECT[*] * FROM ITEM"; SQL statement:
+SELECT * FROM LISTA 
+select * from item [42000-200]

@@ -15,5 +15,4 @@ public class Lista {
     private String listaName;
     @OneToMany(mappedBy = "id_lista", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items;
-
 }
