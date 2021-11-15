@@ -13,7 +13,7 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String itemName;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_lista")
     private Lista id_lista;
     private boolean hecho;

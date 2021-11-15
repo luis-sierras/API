@@ -14,5 +14,5 @@ public class Lista {
     private Long id_Lista;
     private String listaName;
     @OneToMany(mappedBy = "id_lista", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Item> items;
+    private List<Item> item;
 }
