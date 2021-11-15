@@ -2,6 +2,7 @@ package cat.itb.sldproject.apirest.sldproject.controladors;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Item;
 import cat.itb.sldproject.apirest.sldproject.model.serveis.ServeisItem;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class ControladorItem {
 
     private ServeisItem serveiItems;
