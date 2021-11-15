@@ -44,7 +44,7 @@ public class ControladorLista {
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/todolists")
+    @PutMapping("/todolists/{idLista}")
     public ResponseEntity<Lista> modificarLista(@RequestBody Lista mod){
         Lista res = serveiListas.modificarLista(mod);
         if (res == null) return ResponseEntity.notFound().build();
