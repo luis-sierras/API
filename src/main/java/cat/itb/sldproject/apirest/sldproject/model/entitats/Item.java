@@ -1,22 +1,35 @@
 package cat.itb.sldproject.apirest.sldproject.model.entitats;
 
 import lombok.Data;
+import lombok.Generated;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 
 @Data
 @Entity
-@Table()
+@Table(name = "Item")
+@NoArgsConstructor
+
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String itemName;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_lista")
-    private Lista id_lista;
+    @ManyToOne
+    @JoinColumn(name = "idLista")
+    private Lista lista;
     private boolean hecho;
     private long orden;
 
+    public Item(String itemName, Lista lista) {
+        this.itemName = itemName;
+        this.lista = lista;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
