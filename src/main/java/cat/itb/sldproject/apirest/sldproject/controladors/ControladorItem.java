@@ -2,7 +2,6 @@ package cat.itb.sldproject.apirest.sldproject.controladors;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Item;
 import cat.itb.sldproject.apirest.sldproject.model.serveis.ServeisItem;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +10,13 @@ import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor
 public class ControladorItem {
 
-    private ServeisItem serveiItems;
+    private final ServeisItem serveiItems;
+
+    public ControladorItem(ServeisItem serveiItems) {
+        this.serveiItems = serveiItems;
+    }
 
     @GetMapping("/todoitems")
     public ResponseEntity<Object> listarItems(){

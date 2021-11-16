@@ -11,6 +11,8 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "Item")
+@NoArgsConstructor
+
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

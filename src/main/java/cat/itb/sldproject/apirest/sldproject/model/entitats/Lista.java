@@ -1,6 +1,8 @@
 package cat.itb.sldproject.apirest.sldproject.model.entitats;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +11,9 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "Lista")
+@NoArgsConstructor
+@JsonIgnoreProperties(value={"handler","hibernateLazyInitializer", "fieldHandler", "items"})
+
 public class Lista {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,7 +30,7 @@ public class Lista {
         this.items = items;
     }
 
-    public Long getId() {
+    public Long getIdLista() {
         return idLista;
     }
 }
