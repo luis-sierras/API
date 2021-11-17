@@ -25,4 +25,8 @@ public class Lista {
     public Long getIdLista() {
         return idLista;
     }
+
+    public void setListaName(String listaName) {
+        this.listaName = listaName;
+    }
 }

@@ -31,8 +31,8 @@ public class ServeisLista {
 
     //modificar sencer, si existeix el canvia, sino retorna null
     public Lista modificarLista(Lista it) {
-        Lista aux = null;
-        if (repoLista.existsById(it.getIdLista())) aux = repoLista.save(it);
+        Lista aux=null;
+        if(repoLista.existsById(it.getIdLista())) aux=repoLista.save(it);
         return aux;
     }
 
