@@ -43,4 +43,9 @@ public class ServeisItem {
         if (res != null) repoItems.deleteById(id);
         return res;
     }
+
+    //llistar tots els ítems
+    public List<Item> llistarItemsLista(Long idLista) {
+        return repoItems.findByIdLista(idLista);
+    }
 }

@@ -52,4 +52,11 @@ public class ControladorItem {
         if (res == null) return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(res);
     }
+
+    @GetMapping("/todoitems/{idLista}")
+    public ResponseEntity<Object> listarItems(@PathVariable Long idLista){
+        List<Item> res = serveiItems.llistarItemsLista(idLista);
+        if (res == null) return ResponseEntity.notFound().build();
+        else return ResponseEntity.ok(res);
+    }
 }

@@ -1,6 +1,7 @@
 package cat.itb.sldproject.apirest.sldproject.model.serveis;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
+import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriItem;
 import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriLista;
 import org.springframework.stereotype.Service;
 
@@ -9,9 +10,11 @@ import java.util.List;
 @Service
 public class ServeisLista {
     private final RepositoriLista repoLista;
+    private final RepositoriItem repoItems;
 
-    public ServeisLista(RepositoriLista repoLista) {
+    public ServeisLista(RepositoriLista repoLista, RepositoriItem repoItems) {
         this.repoLista = repoLista;
+        this.repoItems = repoItems;
     }
 
     //llistar tots els listas
@@ -43,4 +46,12 @@ public class ServeisLista {
         if (res != null) repoLista.deleteById(id);
         return res;
     }
+
+//    public String listarItemsLista(Long id) {
+//        Lista res = repoLista.findById(id);
+//        Lista items = (Lista) repoItems.findByIdLista(id);
+//        return res.toString()+items.toString();
+//    }
+
+
 }
