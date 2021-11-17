@@ -12,10 +12,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Item")
 @NoArgsConstructor
-
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
     private String itemName;
     @ManyToOne
@@ -23,11 +22,6 @@ public class Item {
     private Lista lista;
     private boolean hecho;
     private long orden;
-
-    public Item(String itemName, Lista lista) {
-        this.itemName = itemName;
-        this.lista = lista;
-    }
 
     public Long getId() {
         return id;
