@@ -10,11 +10,9 @@ import java.util.List;
 @Service
 public class ServeisLista {
     private final RepositoriLista repoLista;
-    private final RepositoriItem repoItems;
 
-    public ServeisLista(RepositoriLista repoLista, RepositoriItem repoItems) {
+    public ServeisLista(RepositoriLista repoLista) {
         this.repoLista = repoLista;
-        this.repoItems = repoItems;
     }
 
     //llistar tots els listas
@@ -46,12 +44,5 @@ public class ServeisLista {
         if (res != null) repoLista.deleteById(id);
         return res;
     }
-
-//    public String listarItemsLista(Long id) {
-//        Lista res = repoLista.findById(id);
-//        Lista items = (Lista) repoItems.findByIdLista(id);
-//        return res.toString()+items.toString();
-//    }
-
 
 }

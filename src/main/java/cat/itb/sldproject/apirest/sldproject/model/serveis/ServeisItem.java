@@ -1,6 +1,7 @@
 package cat.itb.sldproject.apirest.sldproject.model.serveis;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Item;
+import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
 import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriItem;
 import org.springframework.stereotype.Service;
 
@@ -45,7 +46,7 @@ public class ServeisItem {
     }
 
     //llistar tots els ítems
-    public List<Item> llistarItemsLista(Long idLista) {
-        return repoItems.findByIdLista(idLista);
+    public List<Item> llistarItemsLista(Lista idLista) {
+        return repoItems.findItemsByLista(idLista);
     }
 }

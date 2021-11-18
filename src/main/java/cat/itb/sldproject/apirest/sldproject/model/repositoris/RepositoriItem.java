@@ -8,8 +8,5 @@ import java.util.List;
 
 public interface RepositoriItem extends JpaRepository<Item, Long > {
     //hu5 - todos items lista concreta
-    List<Item> findByIdLista(Long idLista);
-    //hu6 - item concreto lista concreta
-    //Item findByidAndId_Lista(Long id, Lista idLista);
-
+    List<Item> findItemsByLista(Lista idLista);
 }
