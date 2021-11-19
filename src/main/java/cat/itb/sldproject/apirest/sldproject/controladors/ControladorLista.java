@@ -49,7 +49,7 @@ public class ControladorLista {
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/todolists/{idLista}")
+    @PutMapping("/todolists")
     public ResponseEntity<Lista> modificarLista(@RequestBody Lista mod){
         Lista res = serveiListas.modificarLista(mod);
         if (res == null) return ResponseEntity.notFound().build();
@@ -62,11 +62,4 @@ public class ControladorLista {
         if (res == null) return ResponseEntity.notFound().build();
         else return controladorItem.listarItemsLista(res);
     }
-
-//    @GetMapping("/todolists/{idLista}/todoitem/{idItem}")
-//    public HttpEntity<?> listarItemLista(@PathVariable Long idLista, Long idItem){
-//        Lista res = serveiListas.consultarLista(idLista);
-//        if (res == null) return ResponseEntity.notFound().build();
-//        else return controladorItem.listarItemLista(res, idItem);
-//    }
 }
