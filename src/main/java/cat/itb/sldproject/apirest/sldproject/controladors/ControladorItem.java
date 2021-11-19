@@ -1,6 +1,7 @@
 package cat.itb.sldproject.apirest.sldproject.controladors;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Item;
+import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
 import cat.itb.sldproject.apirest.sldproject.model.serveis.ServeisItem;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,6 +50,20 @@ public class ControladorItem {
     @PutMapping("/todoitems")
     public ResponseEntity<Item> modificarItem(@RequestBody Item mod){
         Item res = serveiItems.modificarItem(mod);
+        if (res == null) return ResponseEntity.notFound().build();
+        else return ResponseEntity.ok(res);
+    }
+
+    @GetMapping
+    public ResponseEntity<Object> listarItemsLista(@PathVariable Lista idLista){
+        List<Item> res = serveiItems.llistarItemsLista(idLista);
+        if (res == null) return ResponseEntity.notFound().build();
+        else return ResponseEntity.ok(res);
+    }
+
+    @GetMapping("/todolists/todoitem/{id}")
+    public ResponseEntity<Object> listarItemLista(@PathVariable Long id){
+        Item res = serveiItems.consultarItem(id);
         if (res == null) return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(res);
     }

@@ -1,6 +1,7 @@
 package cat.itb.sldproject.apirest.sldproject.model.serveis;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
+import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriItem;
 import cat.itb.sldproject.apirest.sldproject.model.repositoris.RepositoriLista;
 import org.springframework.stereotype.Service;
 
@@ -43,4 +44,5 @@ public class ServeisLista {
         if (res != null) repoLista.deleteById(id);
         return res;
     }
+
 }
