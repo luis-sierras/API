@@ -2,6 +2,7 @@ package cat.itb.sldproject.apirest.sldproject.controladors;
 
 import cat.itb.sldproject.apirest.sldproject.model.entitats.Lista;
 import cat.itb.sldproject.apirest.sldproject.model.serveis.ServeisLista;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,11 @@ import java.util.List;
 public class ControladorLista {
 
     private final ServeisLista serveiListas;
+    private final ControladorItem controladorItem;
 
-    public ControladorLista(ServeisLista serveiListas) {
+    public ControladorLista(ServeisLista serveiListas, ControladorItem controladorItem) {
         this.serveiListas = serveiListas;
+        this.controladorItem = controladorItem;
     }
 
     @GetMapping("/todolists")
@@ -53,11 +56,10 @@ public class ControladorLista {
         else return ResponseEntity.ok(res);
     }
 
-    @GetMapping("/todolists/{idLista}/todoitems/{id}")
-    public ResponseEntity<Lista> consultarItemIdLista(@PathVariable Long idLista, Long id){
+    @GetMapping("/todolists/{idLista}/todoitems")
+    public HttpEntity<?> listarItemsLista(@PathVariable Long idLista){
         Lista res = serveiListas.consultarLista(idLista);
         if (res == null) return ResponseEntity.notFound().build();
-        return ResponseEntity.ok(res);
+        else return controladorItem.listarItemsLista(res);
     }
-
 }

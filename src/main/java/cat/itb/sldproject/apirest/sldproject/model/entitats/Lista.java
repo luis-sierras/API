@@ -22,6 +22,10 @@ public class Lista {
     @OneToMany(mappedBy = "lista", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items = new ArrayList<>();
 
+    public List<Item> getItems() {
+        return items;
+    }
+
     public Long getIdLista() {
         return idLista;
     }
