@@ -19,14 +19,14 @@ public class ControladorItem {
         this.serveiItems = serveiItems;
     }
 
-    @GetMapping("/todoitems")
+    @GetMapping("/zaan/todoitems")
     public ResponseEntity<Object> listarItems(){
         List<Item> res = serveiItems.llistarItems();
         if (res == null) return ResponseEntity.notFound().build();
         else return ResponseEntity.ok(res);
     }
 
-    @GetMapping("/todoitems/{id}")
+    @GetMapping("/zaan/todoitems/{id}")
     public ResponseEntity<Item> consultarItem(@PathVariable Long id)
     {
         Item res = serveiItems.consultarItem(id);
@@ -34,20 +34,20 @@ public class ControladorItem {
         else return ResponseEntity.ok(res);
     }
 
-    @PostMapping("/todoitems")
+    @PostMapping("/zaan/todoitems")
     public ResponseEntity<Item> crearItem(@RequestBody Item nou){
         Item res = serveiItems.afegirItem(nou);
         return new ResponseEntity<>(res, HttpStatus.CREATED);
 
     }
 
-    @DeleteMapping("/todoitems/{id}")
+    @DeleteMapping("/zaan/todoitems/{id}")
     public ResponseEntity<Item> eliminarItem(@PathVariable Long id){
         Item res = serveiItems.eliminarItem(id);
         return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/todoitems")
+    @PutMapping("/zaan/todoitems")
     public ResponseEntity<Item> modificarItem(@RequestBody Item mod){
         Item res = serveiItems.modificarItem(mod);
         if (res == null) return ResponseEntity.notFound().build();
