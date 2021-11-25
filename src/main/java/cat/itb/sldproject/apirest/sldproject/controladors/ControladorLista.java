@@ -53,8 +53,8 @@ public class ControladorLista {
         else return ResponseEntity.ok(res);
     }
 
-    @GetMapping("/zaan/todolists/{idLista}/todoitems/{id}")
-    public ResponseEntity<Lista> consultarItemIdLista(@PathVariable Long idLista, Long id){
+    @GetMapping("/zaan/todolists/{idLista}/todoitems")
+    public ResponseEntity<Lista> consultarItemIdLista(@PathVariable Long idLista){
         Lista res = serveiListas.consultarLista(idLista);
         if (res == null) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(res);
