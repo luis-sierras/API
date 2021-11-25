@@ -61,10 +61,4 @@ public class ControladorItem {
         else return ResponseEntity.ok(res);
     }
 
-    @GetMapping("/todolists/todoitem/{id}")
-    public ResponseEntity<Object> listarItemLista(@PathVariable Long id){
-        Item res = serveiItems.consultarItem(id);
-        if (res == null) return ResponseEntity.notFound().build();
-        else return ResponseEntity.ok(res);
-    }
 }
