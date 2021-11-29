@@ -687,3 +687,105 @@ Syntax error in SQL statement "SELECT * FROM LISTA
 SELECT[*] * FROM ITEM"; SQL statement:
 SELECT * FROM LISTA 
 select * from item [42000-200]
+2021-11-29 15:46:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO, ID, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,1,'agua',2,1), (TRUE,12,'asfd',2,2),(TRUE,13,'serchis',2,4),(TRUE,14,'david',2,6),(TRUE,15,'ivan',2,5),(TRUE,16,'mai',2,5)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO, ID, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,1,'agua',2,1), (TRUE,12,'asfd',2,2),(TRUE,13,'serchis',2,4),(TRUE,14,'david',2,6),(TRUE,15,'ivan',2,5),(TRUE,16,'mai',2,5)"; expected "identifier"; SQL statement:
+insert into item set (hecho, id, item_name, order, id_lista) values (true,1,'agua',2,1), (true,12,'asfd',2,2),(true,13,'serchis',2,4),(true,14,'david',2,6),(true,15,'ivan',2,5),(true,16,'mai',2,5) [42001-200]
+2021-11-29 15:47:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO, ID, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,1,'agua',2,1), (TRUE,12,'asfd',2,2),(TRUE,13,'serchis',2,4),(TRUE,14,'david',2,6),(TRUE,15,'ivan',2,5),(TRUE,16,'mai',2,5)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO, ID, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,1,'agua',2,1), (TRUE,12,'asfd',2,2),(TRUE,13,'serchis',2,4),(TRUE,14,'david',2,6),(TRUE,15,'ivan',2,5),(TRUE,16,'mai',2,5)"; expected "identifier"; SQL statement:
+insert into item set (hecho, id, item_name, order, id_lista) values (true,1,'agua',2,1), (true,12,'asfd',2,2),(true,13,'serchis',2,4),(true,14,'david',2,6),(true,15,'ivan',2,5),(true,16,'mai',2,5) [42001-200]
+2021-11-29 15:48:34 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,'agua',2,1), (TRUE,'asfd',2,2),(TRUE,'serchis',2,4),(TRUE,'david',2,6),(TRUE,'ivan',2,5),(TRUE,'mai',2,5)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,'agua',2,1), (TRUE,'asfd',2,2),(TRUE,'serchis',2,4),(TRUE,'david',2,6),(TRUE,'ivan',2,5),(TRUE,'mai',2,5)"; expected "identifier"; SQL statement:
+insert into item set (hecho, item_name, order, id_lista) values (true,'agua',2,1), (true,'asfd',2,2),(true,'serchis',2,4),(true,'david',2,6),(true,'ivan',2,5),(true,'mai',2,5) [42001-200]
+2021-11-29 15:49:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: La cantidad de columnas no coincide
+Column count does not match; SQL statement:
+insert into item values (true,'agua',2,1), (true,'asfd',2,2),(true,'serchis',2,4),(true,'david',2,6),(true,'ivan',2,5),(true,'mai',2,5) [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp.query(WebApp.java:1092)
+	at org.h2.server.web.WebApp.process(WebApp.java:241)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2021-11-29 15:49:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,'agua',2,1), (TRUE,'asfd',2,2),(TRUE,'serchis',2,4),(TRUE,'david',2,6),(TRUE,'ivan',2,5),(TRUE,'mai',2,5)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO, ITEM_NAME, ORDER, ID_LISTA) VALUES (TRUE,'agua',2,1), (TRUE,'asfd',2,2),(TRUE,'serchis',2,4),(TRUE,'david',2,6),(TRUE,'ivan',2,5),(TRUE,'mai',2,5)"; expected "identifier"; SQL statement:
+insert into item set (hecho, item_name, order, id_lista) values (true,'agua',2,1), (true,'asfd',2,2),(true,'serchis',2,4),(true,'david',2,6),(true,'ivan',2,5),(true,'mai',2,5) [42001-200]
+2021-11-29 15:50:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO, ITEM_NAME, ORDER) VALUES (TRUE,'agua',2), (TRUE,'asfd',2),(TRUE,'serchis',2),(TRUE,'david',2),(TRUE,'ivan',2),(TRUE,'mai',2)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO, ITEM_NAME, ORDER) VALUES (TRUE,'agua',2), (TRUE,'asfd',2),(TRUE,'serchis',2),(TRUE,'david',2),(TRUE,'ivan',2),(TRUE,'mai',2)"; expected "identifier"; SQL statement:
+insert into item set (hecho, item_name, order) values (true,'agua',2), (true,'asfd',2),(true,'serchis',2),(true,'david',2),(true,'ivan',2),(true,'mai',2) [42001-200]
+2021-11-29 15:50:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO, ID, ITEM_NAME, ORDEN, ID_LISTA) VALUES (TRUE,1,'agua',2,1), (TRUE,12,'asfd',2,2),(TRUE,13,'serchis',2,4),(TRUE,14,'david',2,6),(TRUE,15,'ivan',2,5),(TRUE,16,'mai',2,5)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO, ID, ITEM_NAME, ORDEN, ID_LISTA) VALUES (TRUE,1,'agua',2,1), (TRUE,12,'asfd',2,2),(TRUE,13,'serchis',2,4),(TRUE,14,'david',2,6),(TRUE,15,'ivan',2,5),(TRUE,16,'mai',2,5)"; expected "identifier"; SQL statement:
+insert into item set (hecho, id, item_name, orden, id_lista) values (true,1,'agua',2,1), (true,12,'asfd',2,2),(true,13,'serchis',2,4),(true,14,'david',2,6),(true,15,'ivan',2,5),(true,16,'mai',2,5) [42001-200]
+2021-11-29 15:50:56 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO ITEM SET ([*]HECHO,  ITEM_NAME, ORDEN, ID_LISTA) VALUES (TRUE,'agua',2,1), (TRUE,'asfd',2,2),(TRUE,'serchis',2,4),(TRUE,'david',2,6),(TRUE,'ivan',2,5),(TRUE,'mai',2,5)"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO ITEM SET ([*]HECHO,  ITEM_NAME, ORDEN, ID_LISTA) VALUES (TRUE,'agua',2,1), (TRUE,'asfd',2,2),(TRUE,'serchis',2,4),(TRUE,'david',2,6),(TRUE,'ivan',2,5),(TRUE,'mai',2,5)"; expected "identifier"; SQL statement:
+insert into item set (hecho,  item_name, orden, id_lista) values (true,'agua',2,1), (true,'asfd',2,2),(true,'serchis',2,4),(true,'david',2,6),(true,'ivan',2,5),(true,'mai',2,5) [42001-200]
+2021-11-29 16:00:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"
+Data conversion error converting "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ID","HECHO","ITEM_NAME","ORDEN","ID_LISTA")VALUES(?,?,?,?,?) [22018-200]
+2021-11-29 16:00:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"
+Data conversion error converting "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ID","HECHO","ITEM_NAME","ORDEN","ID_LISTA")VALUES(?,?,?,?,?) [22018-200]
+2021-11-29 16:01:14 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"
+Data conversion error converting "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ID","HECHO","ITEM_NAME","ORDEN","ID_LISTA")VALUES(?,?,?,?,?) [22018-200]
+2021-11-29 16:01:14 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"
+Data conversion error converting "'' (ITEM: ""HECHO"" BOOLEAN NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."ITEM"("ID","HECHO","ITEM_NAME","ORDEN","ID_LISTA")VALUES(?,?,?,?,?) [22018-200]

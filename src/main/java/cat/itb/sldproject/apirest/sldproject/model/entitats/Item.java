@@ -21,7 +21,6 @@ public class Item {
     @JoinColumn(name = "idLista")
     private Lista lista;
     private boolean hecho;
-    private long orden;
 
     public Long getId() {
         return id;
