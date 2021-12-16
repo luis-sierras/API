@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "Item")
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class Item {
     @Id
     @GeneratedValue
