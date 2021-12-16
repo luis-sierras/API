@@ -25,4 +25,8 @@ public class Item {
     public Long getId() {
         return id;
     }
+    public Item(String n, Boolean d){
+        itemName = n;
+        hecho = d;
+    }
 }
