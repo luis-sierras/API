@@ -25,8 +25,9 @@ public class Item {
     public Long getId() {
         return id;
     }
-    public Item(String n, Boolean d){
+    public Item(String n, Lista i, Boolean d){
         itemName = n;
+        lista = i;
         hecho = d;
     }
 }
