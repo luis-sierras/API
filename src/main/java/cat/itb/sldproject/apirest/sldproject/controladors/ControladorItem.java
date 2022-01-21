@@ -44,7 +44,7 @@ public class ControladorItem {
     @DeleteMapping("/zaan/todoitems/{id}")
     public ResponseEntity<Item> eliminarItem(@PathVariable Long id){
         Item res = serveiItems.eliminarItem(id);
-        return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(res, HttpStatus.NOT_CONTENT);
     }
 
     @PutMapping("/zaan/todoitems")
