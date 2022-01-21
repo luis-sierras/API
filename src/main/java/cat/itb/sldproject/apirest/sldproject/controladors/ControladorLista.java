@@ -46,7 +46,7 @@ public class ControladorLista {
     @DeleteMapping("/zaan/todolists/{idLista}")
     public ResponseEntity<Lista> eliminarLista(@PathVariable Long idLista){
         Lista res = serveiListas.eliminarLista(idLista);
-        return new ResponseEntity<>(res, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(res, HttpStatus.NOT_CONTENT);
     }
 
     @PutMapping("/zaan/todolists")
